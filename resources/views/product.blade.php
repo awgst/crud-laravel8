@@ -18,7 +18,7 @@
                             <div class="d-flex justify-content-between">
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <div class="bnts d-flex">
-                                    <a href="{{ url('product/edit/'.$product->id) }}" class="card-link text-dark me-1"><i class="bi bi-pencil"></i></a>
+                                    <a href="{{ url('product/'.$product->id.'/edit') }}" class="card-link text-dark me-1"><i class="bi bi-pencil"></i></a>
                                     <form action="{{ url('product/'.$product->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')

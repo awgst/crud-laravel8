@@ -62,7 +62,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Show edit form
+        $product = Product::find($id);
+        return view('edit', ['title'=>'Edit Product', 'product'=>$product]);
     }
 
     /**
@@ -74,7 +76,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Update data
+        Product::find($id)->update($request->except(['_token', 'method']));
+        return redirect('product')->with('status', 'Data successfully updated!');
     }
 
     /**
