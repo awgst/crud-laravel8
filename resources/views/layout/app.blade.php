@@ -22,13 +22,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('about') }}">About</a>
+                <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="{{ url('about') }}">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('product') }}">Product</a>
+                <a class="nav-link {{ request()->is('product') ? 'active' : '' }}" href="{{ url('product') }}">Product</a>
               </li>
             </ul>
           </div>
