@@ -26,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        // Show form input data
+        return view('create', ['title'=>'Add Product']);
     }
 
     /**
@@ -37,7 +38,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Store date form input form into database
+        Product::create($request->all());
+        return redirect('product/create')->with('status', 'Successfully insert data into database!');
     }
 
     /**
